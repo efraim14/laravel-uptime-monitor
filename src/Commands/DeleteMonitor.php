@@ -22,10 +22,8 @@ class DeleteMonitor extends BaseCommand
             return;
         }
 
-        if ($this->confirm("Are you sure you want stop monitoring {$monitor->url}?")) {
-            $monitor->delete();
+        $monitor->delete();
 
-            $this->warn("{$monitor->url} will not be monitored anymore");
-        }
+        $this->warn("{$monitor->url} will not be monitored anymore");
     }
 }
